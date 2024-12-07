@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header-bar">
+  <h1>{{ config.title }}</h1>
+  {% if config.extra.description %}
+  <h2>simple whitespace theme</h2>
+  {% endif %}
+  <br />
+  <hr>
+  <br />
+</div>
+<div class="posts">
+  {%- set show_pages = section.pages -%}
+  <ul class="post-list">
+    {%- for page in show_pages | filter(attribute="extra.layout", value="post") | sort(attribute="date") | reverse %}
+    <li class="post on-list">
+      <h4 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h4>
+      {%- if page.date %}
+      <p class="post-meta">
+        <span class="post-date">
+          {%- if page.date %}
+          {{ page.date | date(format="%B %d, %Y") }}
+          {% endif -%}
+        </span>
+        <span>
+          {%- if page.authors %} — {{ page.authors | join(sep=", ") }}{% endif -%}
+        </span>
+      </p>
+      {% endif -%}
+      {%- if page.taxonomies and page.taxonomies.tags %}
+      <span class="post-tags-inline">
+        :: tags:&nbsp;
+        {%- set sep = "&nbsp;" -%}
+        {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
+        <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
+        {%- if not loop.last %}{{ sep | safe }}{% endif -%}
+        {% endfor -%}
+      </span>
+      {% endif -%}
+      <div class="post-content">
+        {{ page.description | safe }}
+      </div>
+      <br>
+      <hr>
+    </li>
+    {% endfor -%}
+  </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post">
+  <h4 class="post-title">{{ page.title }}</h4>
+  {%- if page.date %}
+  <p class="post-meta">
+    <span class="post-date">
+      {%- if page.date %}
+      {{ page.date | date(format="%B %d, %Y") }}
+      {% endif -%}
+    </span>
+    <span>
+      {%- if page.authors %} — {{ page.authors | join(sep=", ") }}{% endif -%}
+    </span>
+  </p>
+  {% endif -%}
+  {%- if page.taxonomies and page.taxonomies.tags %}
+  <span class="post-tags-inline">
+    :: tags:&nbsp;
+    {%- set sep = "&nbsp;" -%}
+    {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
+    <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
+    {%- if not loop.last %}{{ sep | safe }}{% endif -%}
+    {% endfor -%}
+  </span>
+  {% endif -%}
+  <br>
+  <div class="post-content">
+    {{ page.content | safe }}
+  </div>
+  {%- if config.extra.enable_post_view_navigation and page.lower or page.higher %}
+  <div class="pagination">
+    <div class="pagination__title">
+      <span class="pagination__title-h">{{ config.extra.post_view_navigation_prompt }}</span>
+      <hr />
+    </div>
+    <div class="pagination__buttons">
+      {%- if page.higher %}
+      <span class="button previous">
+        <a href="{{ page.higher.permalink | safe }}">
+          <span class="button__icon">←</span>&nbsp;
+          <span class="button__text">{{ page.higher.title }}</span>
+        </a>
+      </span>
+      {% endif %}
+      {% if page.lower %}
+      <span class="button next">
+        <a href="{{ page.lower.permalink | safe }}">
+          <span class="button__text">{{ page.lower.title }}</span>&nbsp;
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+      {% endif -%}
+    </div>
+  </div>
+  {% endif -%}
+</div>
+{% endblock content %}
