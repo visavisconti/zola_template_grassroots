@@ -15,20 +15,20 @@
     </span>
   </p>
   {% endif -%}
-  {%- if page.taxonomies and page.taxonomies.tags %}
-  <span class="post-tags-inline">
-    :: tags:&nbsp;
-    {%- set sep = "&nbsp;" -%}
-    {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
-    <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">#{{ tag }}</a>
-    {%- if not loop.last %}{{ sep | safe }}{% endif -%}
-    {% endfor -%}
-  </span>
-  {% endif -%}
   <br>
   <div class="post-content">
     {{ page.content | safe }}
   </div>
+  {%- if page.taxonomies and page.taxonomies.tags %}
+  <p><hr></p>
+  <span class="post-tags">
+    {%- set sep = ",&nbsp;" -%}
+    {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
+    <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">{{ tag }}</a>
+    {%- if not loop.last %}{{ sep | safe }}{% endif -%}
+    {% endfor -%}
+  </span>
+  {% endif -%}
   {%- if config.extra.enable_post_view_navigation and page.lower or page.higher %}
   <div class="pagination">
     <div class="pagination__title">

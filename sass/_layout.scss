@@ -205,6 +205,18 @@
     display: block;
     font-size: 42px;
     }
+
+    /* Tags */
+    .post-tags {
+        a {
+            color: $theme-color;
+            font-weight: 100;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
     
     /** Poem formatting ********************************************/
     .poem-title {
