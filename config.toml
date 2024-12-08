@@ -1,6 +1,7 @@
 # The URL the site will be built for
 base_url = "https://evjrob.github.io/zola-folio"
 title = "*folio"
+description = "simple whitespace theme"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -26,5 +27,4 @@ menu_items = [
 ]
 
 author = "Everett Robinson"
-description = "simple whitespace theme"
 show_only_description = true
