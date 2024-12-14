@@ -11,9 +11,15 @@
   <br />
 </div>
 <div class="posts">
-  {%- set show_pages = section.pages -%}
+  {% set is_first_page = true %}
+  {% if paginator is defined %}
+      {% set show_pages = paginator.pages %}
+      {% set is_first_page = paginator.current_index == 1 %}
+  {% elif section is defined %}
+      {% set show_pages = section.pages %}
+  {% endif %}
   <ul class="post-list">
-    {%- for page in show_pages | filter(attribute="extra.layout", value="post") | sort(attribute="date") | reverse %}
+    {%- for page in show_pages %}
     <li class="post on-list">
       <h4 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h4>
       {%- if page.date %}
@@ -36,5 +42,11 @@
     </li>
     {% endfor -%}
   </ul>
+  <footer class="page-footer">
+      <nav>
+          {% if paginator.previous %}<a class="prev" href="{{ paginator.previous }}">← Previous</a>{% else %}<!--Hidden Previous-Button-->{% endif %}
+          {% if paginator.next %}<a class="next" href="{{ paginator.next }}">Next →</a>{% else %}<!--Hidden Next-Button-->{% endif %}
+      </nav>
+  </footer>
 </div>
 {% endblock content %}

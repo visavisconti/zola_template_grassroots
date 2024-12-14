@@ -29,15 +29,12 @@
     {% endfor -%}
   </span>
   {% endif -%}
-  {%- if config.extra.enable_post_view_navigation and page.lower or page.higher %}
-  <div class="pagination">
-    <div class="pagination__title">
-      <span class="pagination__title-h">{{ config.extra.post_view_navigation_prompt }}</span>
-      <hr />
-    </div>
+  {%- if page.lower or page.higher %}
+  <p><hr></p>
+  <div>
     <div class="pagination__buttons">
       {%- if page.higher %}
-      <span class="button previous">
+      <span class="previous">
         <a href="{{ page.higher.permalink | safe }}">
           <span class="button__icon">←</span>&nbsp;
           <span class="button__text">{{ page.higher.title }}</span>
@@ -45,7 +42,7 @@
       </span>
       {% endif %}
       {% if page.lower %}
-      <span class="button next">
+      <span class="next">
         <a href="{{ page.lower.permalink | safe }}">
           <span class="button__text">{{ page.lower.title }}</span>&nbsp;
           <span class="button__icon">→</span>

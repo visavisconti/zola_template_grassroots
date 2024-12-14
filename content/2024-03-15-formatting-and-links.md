@@ -1,12 +1,10 @@
 +++
 title =  "A post with formatting and links"
-date =   "2015-03-15 16:40:16"
+date =   "2024-03-15 16:40:16"
 description = "march & april, looking forward to summer"
 authors = ["Everett Robinson"]
 [taxonomies]
 tags = ["formatting", "links", "markdown"]
-[extra]
-layout = "post"
 +++
 
 This is a post showing off the formatting power of markdown. You can easily add links, such as this one to a [great static site generator](https://getzola.org). You can also create lists super easily. No more HTML ```<ul>``` and ```<li>``` tags!
