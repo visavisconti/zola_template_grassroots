@@ -172,32 +172,32 @@
     }
     h1 {
     font-size: 42px;
+    line-height: 2em;
     @include media-query($on-laptop) {
     font-size: 28px;
-    line-height: 2em;
         }
     }
     h2 {
     font-size: 42px;
+    line-height: 1.5em;
     @include media-query($on-laptop) {
     font-size: 28px;
-    line-height: 1.5em;
-            }
         }
+    }
     h3 {
     font-size: 30px;
+    line-height: 1em; 
     @include media-query($on-laptop) {
     font-size: 22px;
-    line-height: 1em;
-            }
         }
+    }
     h4 {
     font-size: 20px;
+    line-height: 1em;
     @include media-query($on-laptop) {
     font-size: 18px;
-    line-height: 1em;
-            }
         }
+    }
     img {
         max-width: 100%;
         }
