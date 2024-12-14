@@ -51,6 +51,27 @@
     </div>
 
   </footer>
+  <!-- optional scripts -->
+  {% block scripts %}
+  {% if config.extra.math %}
+  <!-- MathJax script for rendering LaTeX math equations -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+        ],
+        displayMath: [
+          ["$$", "$$"],
+          ["\\[", "\\]"],
+        ],
+      },
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js" async></script>
+  {% endif %}
+  {% endblock scripts %}
 </body>
 
 </html>

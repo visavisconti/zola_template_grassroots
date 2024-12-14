@@ -19,6 +19,9 @@ taxonomies = [
 highlight_code = true
 
 [extra]
+# Include mathjax?
+math = true
+
 # Put all your custom variables here
 menu_items = [
     {name = "about", url = "/pages/about"},
