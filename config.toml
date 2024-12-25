@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://evjrob.github.io/zola-folio"
+base_url = "https://zola-folio.pages.dev"
 title = "*folio"
 description = "simple whitespace theme"
 
