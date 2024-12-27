@@ -3,28 +3,21 @@
 // ---
 // @charset "utf-8";
 
-
-
-// Our variables
+// Variables
 $base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
+$spacing-unit: 30px;
+$on-palm: 600px;
+$on-laptop: 800px;
+$base-font-family: Helvetica, sans-serif;
+$base-line-height: 1.5em;
+$horizontal-spacing-unit: 50px;
+$vertical-spacing-unit: 40px;
+$nav-height: 56px;
+$img_spacing: 5px;
+$img_height: 275px;
+$caption_font_size: 12px;
 
 // Using media queries with like this:
 // @include media-query($palm) {
