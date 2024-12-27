@@ -25,6 +25,24 @@ menu_items = [
 MathJax can be enabled by setting `extra.math = true` in config.toml. [Example](https://zola-folio.pages.dev/math/).
 
 
+### About Page Social Contacts
+
+If you have an about page, you can add social contact links using the `extra.socials` setting in the frontmatter of the page:
+
+```toml
++++
+title = "about"
+template = "about.html"
+[extra]
+socials = [
+	{name = "email", uri = "mailto:you@example.com"},
+	{name = "github", uri = "https://github.com"},
+	{name = "instagram", uri = "https://www.instagram.com/"},
+	{name = "bluesky", uri = "https://bsky.app/"}
+]
++++
+```
+
 ## Installation
 
 In the git repo of your zola site:
