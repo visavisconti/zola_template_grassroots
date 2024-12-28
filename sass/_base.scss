@@ -164,6 +164,7 @@ hr {
 
     .page-link-title {
         line-height: $base-line-height;
+        font-weight: 400;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -180,6 +181,7 @@ hr {
 
     .page-link {
         line-height: $base-line-height;
+        font-weight: 400;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -217,11 +219,15 @@ hr {
     font-size: 10px;
     background-color: $grey-color-dark;
     padding: 2px;
-    color: #aaa;
+    color: #ddd;
     position: fixed;
     left: 0px;
     bottom: 0px;
     width: 100%;
+
+    a {
+        color: lighten($theme-color, 20%);
+    }
 }
 
 .site-footer p {
