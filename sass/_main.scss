@@ -19,6 +19,12 @@ $img_spacing: 5px;
 $img_height: 275px;
 $caption_font_size: 12px;
 
+$background-color: #fdfdfd;
+$grey-color-dark:  #333;
+$grey-color-light: #ddd;
+$grey-color:       #555;
+$text-color:       #555; 
+
 // Using media queries with like this:
 // @include media-query($palm) {
 //     .wrapper {

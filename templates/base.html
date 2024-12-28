@@ -9,7 +9,12 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}</title>
 
   <meta name="description" content="{{ config.description }}">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
+  {%- if config.extra.theme_color %}
+    <link rel="stylesheet" href="{{ get_url(path="/color/" ~ config.extra.theme_color ~ ".css", trailing_slash=false) | safe }}">
+  {% else %}
+      <link rel="stylesheet" href="{{ get_url(path="/color/red.css", trailing_slash=false) | safe }}">
+  {% endif -%}
 </head>
 
 <body>

@@ -27,6 +27,8 @@ highlight_code = true
 # Include mathjax?
 math = true
 
+theme_color = "red"
+
 # Put all your custom variables here
 menu_items = [
     {name = "about", url = "/pages/about"},

@@ -77,13 +77,13 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: $theme-color;
+        color: var(--theme-color);
         text-decoration: none;
     }
 }
 
 article a {
-    color: $theme-color;
+    color: var(--theme-color);
     font-weight: 100;
 
     &:hover {
@@ -153,7 +153,7 @@ hr {
 
     &:hover {
         text-decoration: none;
-        color: $theme-color;
+        color: var(--theme-color);
     }
 }
 
@@ -163,7 +163,7 @@ hr {
 
     .page-link-title {
         line-height: $base-line-height;
-        color: $theme-color;
+        color: var(--theme-color);
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -201,7 +201,7 @@ hr {
         }
     }
     .search:focus {
-        outline: none; border:none; border-bottom: 1px solid $theme-color;
+        outline: none; border:none; border-bottom: 1px solid var(--theme-color);
     }
 }
 
@@ -217,7 +217,7 @@ hr {
     z-index: 25;
 
     h1 {
-        color: $theme-color;
+        color: var(--theme-color);
         font-size: 75px;
         line-height: 1em;
     }
@@ -248,7 +248,7 @@ hr {
     }
 
     a {
-        color: $theme-color;
+        color: var(--theme-color);
         font-size: 20px;
         line-height: 1em;
     }
@@ -271,7 +271,7 @@ hr {
     width: 100%;
 
     a {
-        color: lighten($theme-color, 20%);
+        color: var(--theme-color-light);
     }
 }
 
@@ -314,7 +314,7 @@ hr {
         float: left;
         padding-left: 5px;
         padding-right: 5px;
-        fill: $theme-color;
+        fill: var(--theme-color);
     }
 
 }
@@ -335,7 +335,7 @@ hr {
 
 .post-content {
     a {
-        color: $theme-color;
+        color: var(--theme-color);
         font-weight: 100;
 
         &:hover {
@@ -394,7 +394,7 @@ hr {
 
 .post-tags {
     a {
-        color: $theme-color;
+        color: var(--theme-color);
         font-weight: 100;
 
         &:hover {
@@ -457,7 +457,7 @@ hr {
 }
 
 .blankbox {
-    background: $theme-color;
+    background: var(--theme-color);
 }
 
 .img_row {
