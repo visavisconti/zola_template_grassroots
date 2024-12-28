@@ -127,11 +127,10 @@ pre {
 .site-header {
     border-bottom: 1px solid $grey-color-light;
     background-color: #fff;
-    opacity: 0.75;
     position: fixed;
     left: 0px;
     top: 0px;
-    height: 56px;
+    min-height: 56px;
     width: 100%;
     z-index: 50;
 }
@@ -164,14 +163,12 @@ hr {
 
     .page-link-title {
         line-height: $base-line-height;
-        color: darken($theme-color, 35%);
+        color: $theme-color;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
             margin-left: 10px;
         }
-
-        color: $theme-color;
     }
 }
 
@@ -181,12 +178,26 @@ hr {
 
     .page-link {
         line-height: $base-line-height;
-        color: darken($grey-color, 35%);
+        color: $grey-color-dark;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
             margin-left: 10px;
         }
+    }
+
+    .search {
+        margin-left: 10px;
+        padding-left: 20px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+        width: 72px;
+        background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%20-960%20960%20960%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M784-120%20532-372q-30%2024-69%2038t-83%2014q-109%200-184.5-75.5T120-580q0-109%2075.5-184.5T380-840q109%200%20184.5%2075.5T640-580q0%2044-14%2083t-38%2069l252%20252-56%2056ZM380-400q75%200%20127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75%200-127.5%2052.5T200-580q0%2075%2052.5%20127.5T380-400Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E") center / contain no-repeat;
+        background-position: left;
+        outline: none; border:none; border-bottom: 1px solid $grey-color;
+    }
+    .search:focus {
+        outline: none; border:none; border-bottom: 1px solid $theme-color;
     }
 }
 
@@ -196,7 +207,6 @@ hr {
     position: relative;
     font-size: 20px;
     display: block;
-    opacity: 0.75;
     width: 100%;
     text-align: center;
     padding-top: 25px;
@@ -205,6 +215,37 @@ hr {
     h1 {
         color: $theme-color;
         font-size: 75px;
+        line-height: 1em;
+    }
+
+    h2 {
+        font-size: 25px;
+        line-height: 1em;
+    }
+}
+
+.search-results {
+    display: block;
+    position: absolute;
+    float: right;
+    font-size: 16px;
+    line-height: 1.5em;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    max-width: 360px;
+    max-height: 480px;
+    overflow-y: scroll;
+    margin-right: 15px;
+    z-index: 100;
+
+    li {
+        list-style: none;
+        padding: 15px;
+    }
+
+    a {
+        color: $theme-color;
+        font-size: 20px;
         line-height: 1em;
     }
 

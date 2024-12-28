@@ -22,15 +22,40 @@
       </nav>
 
       {% block header_menu %}
-      {%- if config.extra.menu_items %}
-      {%- set menu_items = config.extra.menu_items -%}
       <nav class="site-nav">
+        {%- if config.extra.menu_items %}
+        {%- set menu_items = config.extra.menu_items -%}
         {%- for item in menu_items %}
         <a class="page-link" href="{{ item.url | safe }}">{{ item.name
           | safe }}</a>
         {% endfor -%}
+        {% endif -%}
+        {% block search %}
+        {%- if config.build_search_index %}
+        <div class="site-nav">
+          <input class="search" id="search" type="text" placeholder="Search">
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+        {%- endif %}
+        {%- if config.build_search_index -%}
+          {%- if config.search.index_format -%}
+              {%- set search_index_format = config.search.index_format -%}
+          {%- else -%}
+              {%- set search_index_format = "elasticlunr_json" -%}
+          {%- endif -%}
+
+          {%- if search_index_format == "elasticlunr_javascript" -%}
+              <script defer src="{{ get_url(path='search_index.' ~ lang ~ '.js', cachebust=true) | safe }}"></script>
+          {%- endif -%}
+
+          {# Main search scripts #}
+          <script defer src="{{ get_url(path='/elasticlunr.min.js', cachebust=true) | safe }}"></script>
+          <script defer src="{{ get_url(path='/search.js', cachebust=true) | safe }}"></script>
+        {%- endif -%}
+        {% endblock search %}
       </nav>
-      {% endif -%}
       {% endblock header_menu %}
     </div>
   </header>
