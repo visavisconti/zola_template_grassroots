@@ -164,7 +164,7 @@ hr {
 
     .page-link-title {
         line-height: $base-line-height;
-        font-weight: 400;
+        color: darken($theme-color, 35%);
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -181,7 +181,7 @@ hr {
 
     .page-link {
         line-height: $base-line-height;
-        font-weight: 400;
+        color: darken($grey-color, 35%);
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
