@@ -21,13 +21,13 @@ tags = ["formatting", "links", "markdown"]
 
 This is a post showing off the formatting power of markdown. You can **bold text**, *italicize text*, or ***both at the same time!*** You can easily add links, such as this one to a [great static site generator](https://getzola.org). You can also create lists super easily. No more HTML ```<ul>``` and ```<li>``` tags!
 
-#### My Unordered list
+## My Unordered list
 * one
 * two
 * three
 * four
 
-#### My Ordered List
+## My Ordered List
 1. i
 2. ii
 3. iii
