@@ -8,6 +8,35 @@
 
 ## Features
 
+- [x] Menu bar
+- [x] Social links
+- [x] MathJax
+- [x] Search
+- [x] Customizable color
+- [] Dark mode
+
+## Installation
+
+In the git repo of your zola site:
+
+### Add the theme as a git submodule:
+
+```bash
+git submodule add https://github.com/evjrob/zola-folio themes/zola-folio
+git submodule update --init --recursive
+git submodule update --remote --merge
+```
+
+### Or clone the theme directly into your themes directory:
+
+```bash
+git clone https://github.com/evjrob/zola-folio themes/zola-folio
+```
+
+Then set `theme = "zola-folio"` in your config.toml file. You can now test the theme locally by running `zola serve` in the terminal and navigating to the localhost URL displayed by the command.
+
+## Configuration
+
 ### Menu Bar
 
 Items in the top menu bar can be controlled with the `extra.menu_items` setting in config.toml:
@@ -19,17 +48,6 @@ menu_items = [
     {name = "photography", url = "/pages/photography"},
 ]
 ```
-
-### MathJax
-
-MathJax can be enabled by setting `extra.math` in config.toml:
-
-```toml
-[extra]
-math = true
-```
-[Example](https://zola-folio.pages.dev/math/).
-
 
 ### About Page Social Contacts
 
@@ -48,6 +66,16 @@ socials = [
 ]
 +++
 ```
+
+### MathJax
+
+MathJax can be enabled by setting `extra.math` in config.toml:
+
+```toml
+[extra]
+math = true
+```
+[Example](https://zola-folio.pages.dev/math/).
 
 ### Search
 
@@ -82,23 +110,3 @@ If the existing colors are not to your liking, then you can create your own by a
 }
 ```
 Then set `theme_color = "custom"`.
-
-## Installation
-
-In the git repo of your zola site:
-
-### Add the theme as a git submodule:
-
-```bash
-git submodule add https://github.com/evjrob/zola-folio themes/zola-folio
-git submodule update --init --recursive
-git submodule update --remote --merge
-```
-
-### Or clone the theme directly into your themes directory:
-
-```bash
-git clone https://github.com/evjrob/zola-folio themes/zola-folio
-```
-
-Then set `theme = "zola-folio"` in your config.toml file. You can now test the theme locally by running `zola serve` in the terminal and navigating to the localhost URL displayed by the command.
