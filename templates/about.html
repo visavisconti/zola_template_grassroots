@@ -10,7 +10,7 @@
       {% for social in page.extra.socials %}
       {% set icon_svg = load_data(path="templates/icons/square-"~social.name~".svg", required=false) %}
       {%- if not icon_svg -%}
-        {%- set icon_path = load_data(path="themes/zola-folio/templates/icons/square-"~social.name~".svg", required=false) -%}
+        {%- set icon_svg = load_data(path="themes/zola-folio/templates/icons/square-"~social.name~".svg", required=false) -%}
       {%- endif -%}
       <a href="{{ social.uri }}">{{ icon_svg | safe}}</a>
       {% endfor %}
