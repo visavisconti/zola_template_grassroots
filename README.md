@@ -22,7 +22,13 @@ menu_items = [
 
 ### MathJax
 
-MathJax can be enabled by setting `extra.math = true` in config.toml. [Example](https://zola-folio.pages.dev/math/).
+MathJax can be enabled by setting `extra.math` in config.toml:
+
+```toml
+[extra]
+math = true
+```
+[Example](https://zola-folio.pages.dev/math/).
 
 
 ### About Page Social Contacts
@@ -42,6 +48,40 @@ socials = [
 ]
 +++
 ```
+
+### Search
+
+Search using elasticlunr.js:
+
+```toml
+default_language = "en"
+build_search_index = true
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
+```
+
+### Customizable Colors
+
+Simply set the `extra.theme_color` in the config.toml:
+
+```toml
+[extra]
+theme_color = "red"|"blue"|"green"|"purple"
+```
+If the existing colors are not to your liking, then you can create your own by adding a **sass/color/custom.scss** file with the following:
+
+```scss
+:root {
+    --theme-color: #ffffff;
+    --theme-color-light: #ffffff;
+}
+```
+Then set `theme_color = "custom"`.
 
 ## Installation
 
