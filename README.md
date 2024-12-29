@@ -13,7 +13,7 @@
 - [x] MathJax
 - [x] Search
 - [x] Customizable color
-- [] Dark mode
+- [ ] Dark mode
 
 ## Installation
 
