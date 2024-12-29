@@ -8,12 +8,11 @@
     
     <span class="contacticon center">
       {% for social in page.extra.socials %}
-      {% if config.theme %}
-        {% set icon_root = "themes/zola-folio/" %}
-      {% else %}
-        {% set icon_root = "" %}
-      {% endif %}
-      <a href="{{ social.uri }}">{{ load_data(path=icon_root~"templates/icons/square-"~social.name~".svg") | safe}}</a>
+      {% set icon_svg = load_data(path="templates/icons/square-"~social.name~".svg", required=false) %}
+      {%- if not icon_svg -%}
+        {%- set icon_path = load_data(path="themes/zola-folio/templates/icons/square-"~social.name~".svg", required=false) -%}
+      {%- endif -%}
+      <a href="{{ social.uri }}">{{ icon_svg | safe}}</a>
       {% endfor %}
     </span>
     {% endif -%}
