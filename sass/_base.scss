@@ -476,10 +476,15 @@ hr {
 }
 
 .img_row {
+    display: inline-table;
     height: $img_height;
     width: 100%;
     box-sizing: border-box;
     padding: $img_spacing;
+
+    img {
+        height: $img_height;
+    }
 }
 
 .col {
