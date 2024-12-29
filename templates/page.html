@@ -22,6 +22,7 @@
   {%- if page.taxonomies and page.taxonomies.tags %}
   <p><hr></p>
   <span class="post-tags">
+    tags:
     {%- set sep = ",&nbsp;" -%}
     {%- for tag in page.taxonomies.tags | sort | unique(case_sensitive=false) %}
     <a class="post-tag" href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">{{ tag }}</a>
