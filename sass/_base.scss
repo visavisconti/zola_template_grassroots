@@ -265,10 +265,10 @@ hr {
 
 .site-footer {
     border-top: 1px solid $grey-color-dark;
-    font-size: 10px;
+    font-size: 11px;
     background-color: $grey-color-dark;
     padding: 2px;
-    color: #ddd;
+    color: #fff;
     position: fixed;
     left: 0px;
     bottom: 0px;
@@ -286,6 +286,7 @@ hr {
 
     a {
         color: var(--theme-color-light);
+        text-decoration: underline;
     }
 }
 
