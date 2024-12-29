@@ -10,10 +10,12 @@
 
 - [x] Menu bar
 - [x] Social links
+- [x] Tags
 - [x] MathJax
 - [x] Search
 - [x] Customizable color
-- [ ] Dark mode
+- [ ] Multi-language support
+- [ ] SEO tags
 
 ## Installation
 
