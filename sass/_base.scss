@@ -133,6 +133,10 @@ pre {
     min-height: $nav-height;
     width: 100%;
     z-index: 50;
+
+    .wrapper {
+        padding-bottom: 0px;
+    }
 }
 
 hr {
