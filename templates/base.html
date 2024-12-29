@@ -6,9 +6,24 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}</title>
+  <title>{{ page.title | default(value=config.title) | safe }}</title>
+  <meta name="description" content="{{ page.description | default(value=config.description) | safe }}">
 
-  <meta name="description" content="{{ config.description }}">
+  <meta property="og:site_name" content="{{ config.title }}">
+  <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ current_url }}">
+  {%- if page.extra.feature_image %}
+  <meta property="og:image" content="{{ page.extra.feature_image }}">
+  {% endif -%}
+  <meta property="og:description" content="{{ page.description | default(value=config.description) | safe }}">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="{{ page.title | default(value=config.title) | safe }}">
+  <meta property="twitter:description" content="{{ page.description | default(value=config.description) | safe }}">
+  {%- if page.extra.feature_image %}
+  <meta property="twitter:image"  content="{{ page.extra.feature_image }}">
+  {% endif -%}
+
   <link rel="stylesheet" href="/style.css" />
   {%- if config.extra.theme_color %}
     <link rel="stylesheet" href="{{ get_url(path="/color/" ~ config.extra.theme_color ~ ".css", trailing_slash=false) | safe }}">

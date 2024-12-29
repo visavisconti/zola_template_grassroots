@@ -1,24 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="post">
-  <h4 class="post-title">{{ page.title }}</h4>
-  {%- if page.date %}
-  <p class="post-meta">
-    <span class="post-date">
-      {%- if page.date %}
-      {{ page.date | date(format="%B %d, %Y") }}
+<div class="post"></div>
+  <article itemscope itemtype="http://schema.org/Article">
+    {%- if page.date %}
+    <meta itemprop="datePublished" content="{{ page.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
+    {% endif -%}
+    {%- if page.extra.feature_image %}
+    <meta itemprop="image" content="{{ page.extra.feature_image }}">
+    {% endif -%}  
+    <meta itemprop="publisher" content="{{ config.base_url }}">
+    <h1 itemprop="name headline" class="post-title">{{ page.title }}</h1>
+    {%- if page.date %}
+    <p class="post-meta">
+      <span class="post-date">
+        {%- if page.date %}
+        {{ page.date | date(format="%B %d, %Y") }}
+        {% endif -%}
+      </span>
+      {%- if page.authors %}
+      <span itemprop="authors" content="{{ page.authors | join(sep=", ") }}">
+         — {{ page.authors | join(sep=", ") }}
+      </span>
       {% endif -%}
-    </span>
-    <span>
-      {%- if page.authors %} — {{ page.authors | join(sep=", ") }}{% endif -%}
-    </span>
-  </p>
-  {% endif -%}
-  <br>
-  <div class="post-content">
-    {{ page.content | safe }}
-  </div>
+    </p>
+    {% endif -%}
+    <br>
+    <div class="post-content">
+      {{ page.content | safe }}
+    </div>
+  </article>
   {%- if page.taxonomies and page.taxonomies.tags %}
   <p><hr></p>
   <span class="post-tags">

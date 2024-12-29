@@ -14,8 +14,8 @@
 - [x] MathJax
 - [x] Search
 - [x] Customizable color
+- [x] SEO tags
 - [ ] Multi-language support
-- [ ] SEO tags
 
 ## Installation
 
