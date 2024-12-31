@@ -112,3 +112,12 @@ If the existing colors are not to your liking, then you can create your own by a
 }
 ```
 Then set `theme_color = "custom"`.
+
+### SEO Tags
+
+The typical `<meta>` tags including Open Graph and Twitter are automatically set for posts using the information in the frontmatter of each post. To ensure an image is set for Open Graph and Twitter cards, please ensure the frontmatter contains the `extra.feature_image` value:
+
+```toml
+[extra]
+feature_image = "my_image.ext"
+```
