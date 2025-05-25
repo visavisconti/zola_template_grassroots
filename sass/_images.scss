@@ -1,0 +1,28 @@
+// Responsive images
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block; // Removes extra space below images if they are inline by default
+  margin: 1em auto; // Adds some vertical spacing and centers the image
+}
+
+// Media query for mobile devices
+@media screen and (max-width: 768px) {
+  .post-content img {
+    // Adjust margins for smaller screens if necessary
+    // The base rule (max-width: 100%) already ensures images scale down.
+    // We can remove horizontal auto margins if we want images to be full-width by default on mobile.
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Responsive styles for images with the class .thumbnail
+// These are used in templates/portfolio.html
+img.thumbnail {
+  max-width: 100%;
+  height: auto;
+  display: block; // Ensures proper block-level behavior for margin auto and scaling
+  margin-left: auto; // Centers the image if its max-width is less than container width
+  margin-right: auto; // Centers the image
+}
