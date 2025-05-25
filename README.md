@@ -1,123 +1,57 @@
-# *folio
+# Zola Folio Theme
 
-[![zola-folio](static/img/zola-folio.png)](https://zola-folio.pages.dev/)
+A Zola theme based on the Jekyll *folio theme.
 
-*folio is a [Zola](https://www.getzola.org) theme forked from the [original Jekyll theme by Lia Boegev](https://github.com/bogoli/-folio/tree/master).
+This theme is a port of the beautiful [*folio theme](http://bogoli.github.io/-folio/) by Lia Bogoev.
 
-**[Live Demo](https://zola-folio.pages.dev/)**
-
-## Features
-
-- [x] Menu bar
-- [x] Social links
-- [x] Tags
-- [x] MathJax
-- [x] Search
-- [x] Customizable color
-- [x] SEO tags
-- [ ] Multi-language support
+[Live Demo](https://zola-folio.pages.dev/)
 
 ## Installation
 
-In the git repo of your zola site:
+1. Download the theme to your `themes` directory:
+   ```bash
+   git clone https://github.com/evjrob/zola-folio.git themes/zola-folio
+   ```
+2. Enable the theme in your `config.toml`:
+   ```toml
+   theme = "zola-folio"
+   ```
 
-### Add the theme as a git submodule:
-
-```bash
-git submodule add https://github.com/evjrob/zola-folio themes/zola-folio
-git submodule update --init --recursive
-git submodule update --remote --merge
-```
-
-### Or clone the theme directly into your themes directory:
-
-```bash
-git clone https://github.com/evjrob/zola-folio themes/zola-folio
-```
-
-Then set `theme = "zola-folio"` in your config.toml file. You can now test the theme locally by running `zola serve` in the terminal and navigating to the localhost URL displayed by the command.
+This theme requires Zola version 0.19.2 or higher.
 
 ## Configuration
 
-### Menu Bar
+You can customize the theme by setting the following variables in your `config.toml`:
 
-Items in the top menu bar can be controlled with the `extra.menu_items` setting in config.toml:
+- `menu_items`: A list of menu items to display in the header. Each item should have a `name` and a `url`.
+- `theme_color`: The color scheme to use for the theme. Available options are "red", "blue", "green", and "purple".
+- `author`: The name of the author to display in the footer.
+- `show_only_description`: If set to `true`, only the description will be shown on the homepage, otherwise the full content of `_index.md` will be shown.
+
+
+Example `config.toml` snippet:
 
 ```toml
+[extra]
 menu_items = [
     {name = "about", url = "/pages/about"},
     {name = "projects", url = "/pages/projects"},
     {name = "photography", url = "/pages/photography"},
 ]
+theme_color = "red"
+author = "Your Name"
+show_only_description = true
 ```
 
-### About Page Social Contacts
+## Author
 
-If you have an about page, you can add social contact links using the `extra.socials` setting in the frontmatter of the page:
+Everett Robinson
+[http://everettsprojects.com](http://everettsprojects.com)
 
-```toml
-+++
-title = "about"
-template = "about.html"
-[extra]
-socials = [
-	{name = "email", uri = "mailto:you@example.com"},
-	{name = "github", uri = "https://github.com"},
-	{name = "instagram", uri = "https://www.instagram.com/"},
-	{name = "bluesky", uri = "https://bsky.app/"}
-]
-+++
-```
+## License
 
-### MathJax
+This theme is released under the MIT License.
 
-MathJax can be enabled by setting `extra.math` in config.toml:
+## Screenshot
 
-```toml
-[extra]
-math = true
-```
-[Example](https://zola-folio.pages.dev/math/).
-
-### Search
-
-Search using elasticlunr.js:
-
-```toml
-default_language = "en"
-build_search_index = true
-
-[search]
-include_title = true
-include_description = true
-include_path = true
-include_content = true
-index_format = "elasticlunr_json"
-```
-
-### Customizable Colors
-
-Simply set the `extra.theme_color` in the config.toml:
-
-```toml
-[extra]
-theme_color = "red"|"blue"|"green"|"purple"
-```
-If the existing colors are not to your liking, then you can create your own by adding a **sass/color/custom.scss** file with the following:
-
-```scss
-:root {
-    --theme-color: #ffffff;
-    --theme-color-light: #ffffff;
-}
-```
-Then set `theme_color = "custom"`.
-
-### SEO Tags
-
-The typical `<meta>` tags including Open Graph and Twitter are automatically set for posts using the information in the frontmatter of each post. To ensure an image is set for Open Graph and Twitter cards, please ensure the frontmatter contains the `extra.feature_image` value:
-
-```toml
-[extra]
-feature_image = "my_image.ext"
-```
+![Screenshot of zola-folio theme](screenshot.png)
